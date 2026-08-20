@@ -1,0 +1,82 @@
+body { /* Stili generali per il corpo della pagina */
+    margin: 0; /* Rimuove i margini di default */
+    padding: 0; /* Rimuove la spaziatura interna di default */
+    background-color: #1a252c; /* Imposta lo sfondo scuro della pagina */
+    color: #ffffff; /* Imposta il testo di colore bianco */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Imposta il font del testo */
+    display: flex; /* Attiva Flexbox per la disposizione degli elementi */
+    flex-direction: column; /* Dispone gli elementi verticalmente */
+    align-items: center; /* Centra gli elementi orizzontalmente */
+    justify-content: center; /* Centra gli elementi verticalmente */
+    min-height: 100vh; /* Fa occupare alla pagina tutta l'altezza dello schermo */
+}
+
+h1 { /* Stile per il titolo h1 */
+    margin-bottom: 10px; /* Margine inferiore sotto il titolo */
+    letter-spacing: 2px; /* Spaziatura maggiorata tra le lettere */
+    text-transform: uppercase; /* Trasforma il testo tutto in maiuscolo */
+    color: #2ecc71; /* Imposta il colore verde brillante */
+}
+
+#game-wrapper { /* Contenitore principale del Canvas */
+    position: relative; /* Posizionamento relativo per fare da riferimento agli overlay assoluti */
+    width: 800px; /* Larghezza del quadro di gioco */
+    height: 400px; /* Altezza del quadro di gioco */
+    border: 3px solid #27ae60; /* Bordo verde attorno all'area di gioco */
+    box-shadow: 0 0 20px rgba(46, 204, 113, 0.2); /* Ombra verde esterna sfumata */
+    border-radius: 8px; /* Arrotonda gli angoli del contenitore */
+    overflow: hidden; /* Taglia tutto ciò che fuoriesce dai bordi */
+}
+
+canvas { /* Tela dove viene disegnato il gioco */
+    background-color: #0f141d; /* Sfondo scuro del canvas di gioco */
+    display: block; /* Elimina spazi vuoti indesiderati sotto il canvas */
+}
+
+.overlay { /* Schermate sovrapposte (Start e Game Over) */
+    position: absolute; /* Posizionamento assoluto per sovrapporsi al Canvas */
+    top: 0; /* Ancorato in alto */
+    left: 0; /* Ancorato a sinistra */
+    width: 100%; /* Copre tutta la larghezza dell'area di gioco */
+    height: 100%; /* Copre tutta l'altezza dell'area di gioco */
+    background: rgba(15, 20, 29, 0.88); /* Sfondo scuro semitrasparente */
+    display: flex; /* Flexbox per centrare i testi interni */
+    flex-direction: column; /* Dispone testi e pulsanti in colonna */
+    justify-content: center; /* Centra verticalmente gli elementi interni */
+    align-items: center; /* Centra orizzontalmente gli elementi interni */
+    z-index: 10; /* Posiziona l'overlay sopra al canvas */
+}
+
+.overlay h2 { /* Titoli all'interno degli overlay */
+    font-size: 36px; /* Dimensione testo grande */
+    margin-bottom: 10px; /* Distanza dal testo sottostante */
+    color: #2ecc71; /* Colore verde */
+}
+
+.overlay p { /* Testi d'istruzione negli overlay */
+    font-size: 18px; /* Dimensione testo media */
+    margin-bottom: 20px; /* Distanza dal pulsante sottostante */
+    color: #ecf0f1; /* Colore bianco chiaro */
+}
+
+button { /* Stile generale per i pulsanti */
+    padding: 12px 24px; /* Spazio interno attorno al testo */
+    font-size: 18px; /* Dimensione del testo del pulsante */
+    font-weight: bold; /* Testo in grassetto */
+    color: #0f141d; /* Colore del testo scuro */
+    background-color: #2ecc71; /* Sfondo verde */
+    border: none; /* Rimuove il bordo standard */
+    border-radius: 5px; /* Angoli del pulsante arrotondati */
+    cursor: pointer; /* Cambia il cursore in manina al passaggio del mouse */
+    transition: transform 0.1s, background-color 0.2s; /* Animazione per l'hover */
+}
+
+button:hover { /* Effetto al passaggio del mouse sul pulsante */
+    background-color: #e74c3c; /* Cambia colore di sfondo in rosso */
+    color: #ffffff; /* Cambia colore del testo in bianco */
+    transform: scale(1.05); /* Ingrandisce leggermente il pulsante */
+}
+
+.hidden { /* Classe di utilità per nascondere gli elementi */
+    display: none !important; /* Forza la scomparsa dell'elemento */
+}
